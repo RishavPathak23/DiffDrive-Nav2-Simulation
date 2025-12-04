@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <!-- LEFT LASER LINK -->
+    <gazebo reference="left_laser_link">
+        <material>Gazebo/Black</material>
+        <sensor name="right_laser" type="gpu_lidar">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.3</min>
+                    <max>12</max>
+                </range>
+            </lidar>
+            <topic>left_lidar_scan</topic>
+            <gz_frame_id>left_laser_link</gz_frame_id>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="right_laser_link">
+        <material>Gazebo/Black</material>
+        <sensor name="left_laser" type="gpu_lidar">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.3</min>
+                    <max>12</max>
+                </range>
+            </lidar>
+            <topic>right_lidar_scan</topic>
+            <gz_frame_id>right_laser_link</gz_frame_id>
+        </sensor>
+    </gazebo>
+    
+</robot>

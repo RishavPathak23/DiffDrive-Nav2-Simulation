@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- 
+    Forklift robot xacro file.
+    This file loads all the necessary xacro urdf and sensors.
+-->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="forklift">
+
+    <xacro:arg name="sim_mode" default="true"/>
+
+    <xacro:include filename="robot_core.xacro"/>
+    <xacro:include filename="lidar.xacro"/>
+    <xacro:include filename="camera.xacro"/>
+    <xacro:include filename="gazebo_control.xacro"/>
+    <xacro:include filename="gazebo_lidar.xacro"/>
+    
+
+</robot>
